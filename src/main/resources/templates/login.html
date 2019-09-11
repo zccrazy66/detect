@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>焊接检测系统登陆</title>
+    <link th:href="@{/css/sign.css}" rel="stylesheet">
+    <script th:src="@{/js/jquery331.js}"></script>
+    <script th:src="@{/js/sign/sign.js}"></script>
+<!---->
+</head>
+<body>
+<!--<div class="container1">-->
+<div class="dowebok" >
+    <form th:action="@{/login}" method="post">
+    <div class="word">焊接缺陷检测平台登陆</div>
+    <br>
+    <div class="logo"></div>
+
+    <div style="margin-left: 140px">
+        <p class="tips" th:text="${msg}"></p>
+    </div><br>
+    <div class="form-item">
+        <input name="username" class="username_login" type="text" autocomplete="off" placeholder="用户名">
+    </div>
+    <div class="form-item">
+        <input name="password" class="password_login" type="password" autocomplete="off" placeholder="登录密码">
+    </div>
+    <div class="form-item">
+        <button type="submit">登 录</button>
+    </div>
+    </form>
+</div>
+<!--</div>-->
+</body>
+</html>

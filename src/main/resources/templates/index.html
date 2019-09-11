@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>焊接检测系统</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link th:href="@{/css/dashboard2.css}" rel="stylesheet">
+    <link th:href="@{/css/buttons1.css}" rel="stylesheet">
+    <script th:src="@{/js/jquery331.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script th:src="@{/js/feather.js}"></script>
+    <script th:src="@{/js/index/index.js}"></script>
+<!---->
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-3 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">焊接检测系统</a>
+        <!--<input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">-->
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <form th:action="@{/logout}" method="post">
+                <input class="logout" type="submit" value="登出"/></form>
+            </li>
+        </ul>
+    </nav>
+</div>
+<br><br>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link first" href="#">
+                            <span data-feather="image"></span>
+                            焊接检测 <span class="sr-only"></span>
+                        </a>
+                        <ul class="nav-second-level">
+                            <li style="list-style: none">
+                                <a class="nav-link ele" href="#">
+                                    <span data-feather="zap"></span>
+                                    电熔照片
+                                </a>
+                            </li>
+                            <li style="list-style: none">
+                                <a class="nav-link hot" href="#">
+                                    <span data-feather="sun"></span>
+                                    热熔照片
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--<li class="nav-item">-->
+                        <!--<a class="nav-link pic" href="#">-->
+                            <!--<span data-feather="database"></span>-->
+                            <!--图片管理-->
+                        <!--</a>-->
+                    <!--</li>-->
+
+                    <li class="nav-item">
+                        <a class="nav-link person" href="#">
+                            <span data-feather="users"></span>
+                            人员管理
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link worklog" href="#">
+                            <span data-feather="book-open"></span>
+                            工作日志
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" id="main">
+
+        </main>
+
+
+    </div>
+</div>
+<script>
+    feather.replace()
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/js/person/person.js}"></script>
+</head>
+<body>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h3">人员管理</h1>
+</div>
+
+<div>
+    <button  class="button-raised button-small" style="margin-left: 1000px;margin-bottom: 20px;" data-toggle="modal" data-target="#myModal">
+        新增人员
+    </button>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">
+                        新增人员信息
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                        <!--get id-->
+                        <!--*************-->
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label ">用户名</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-password" class="col-form-label">密码</label>
+                        <input type="password" class="form-control" id="message-password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message-position" class="col-form-label">职位</label>
+                        <textarea class="form-control" id="message-position"></textarea>
+                    </div>
+                        <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">权限</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>User</option>
+                            <option>Admin</option>
+                        </select>
+                    </div>
+
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close_btn">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary insert">
+                        确认新增
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <!--<th scope="col">#</th>-->
+            <th scope="col">用户名</th>
+            <th scope="col">职位</th>
+            <th scope="col">权限</th>
+            <th scope="col">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="emps,iterStat:${emps}" class="user_tr">
+            <!--<th scope="row" class="emp_id" th:text="${iterStat.count}" ></th>-->
+            <td class="emp_name" id="emp_id" th:text="${emps.name}"></td>
+            <td th:text="${emps.position}"></td>
+            <td th:text="${emps.power}"></td>
+            <td>
+                <button class="btn-primary update_modal_btn"
+                        type="button"
+                        data-toggle="modal"
+                        data-target="#myModal1">修改</button>
+            </td>
+            <td><button class="btn-danger delete" type="button" style="margin-left: -160px">删除</button></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- 修改backup-->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel1">修改人员信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label >密码</label>
+                    <input type="password" class="form-control update_password">
+                </div>
+                <div class="form-group">
+                    <label >职位</label>
+                    <input type="text" class="form-control update_position">
+                </div>
+                <div class="form-group">
+                    <label>权限</label>
+                    <select class="form-control update_power">
+                        <option>User</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="close_btn1">关闭
+                </button>
+                <button type="button" class="btn btn-primary update">
+                    提交更改
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

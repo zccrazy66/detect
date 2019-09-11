@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-2 border-bottom">
+    <h1 class="h3">电熔图片识别</h1>
+</div>
+<div class="box1">
+    <!--<h1>敬请期待</h1>-->
+<!--    <div style="position: absolute;" class="popups" id="jiance" >-->
+<!--        -->
+<!--    </div>-->
+    <img id="img_elec"  style="width: 600px;height: 400px;">
+
+</div>
+
+<div class="box3">
+
+    <p id="error_msg"></p>
+    <p id="chengcha"></p>
+    <p id="impurity_sign"></p>
+    <p id="hole_sign"></p>
+    <p id="dislocation_sign"></p>
+    <p id="over_cold_welding_sign"></p>
+
+    <!--<div class="box3">-->
+<!--    <img id="after_elec" style="width: 500px;height: 400px;">-->
+</div>
+<div class="box2">
+    <form id="img_form" method="POST" action="/upload" enctype="multipart/form-data">
+        <!--<button class="login-button" type="file">上传图片</button><br><br>-->
+        <input type="file" name="file" multiple/><br/><br/>
+        <!--<input type="submit" value="上传文件" class="login-button" id="btn_upload" /><br><br>-->
+        <button type="button" onclick="ajax_upload(),detection();" class="login-button">开始检测</button>
+        <br><br>
+        <p>特征线到电阻丝的值</p> <input id="threshold_L" value="10">
+        <br><br>
+    </form>
+<!--    <button class="login-button detection"  onclick="detection()">开始检测</button>-->
+<!--    <br><br>-->
+
+<!--    <button class="login-button" onclick="manual()">手工标注</button>-->
+    <br> <br>
+
+    <!--detail-->
+    <!--<div id="manual" class="manual" style="display: none">-->
+        <!--<form>-->
+            <!--<div>-->
+                <!--<a >孔洞：</a>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+</div>
+
+</body>
+</html>

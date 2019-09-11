@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h3">热熔图片识别</h1>
+</div>
+<div class="box1">
+    <!--<h1>敬请期待</h1>-->
+    <!--<img >-->
+</div>
+<div class="box2">
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <!--<button class="login-button" type="file">上传图片</button><br><br>-->
+        <input type="file" name="file"/><br/><br/>
+        <input type="submit" value="上传文件" class="login-button"/><br><br>
+    </form>
+    <button class="login-button">开始检测</button>
+    <br><br>
+
+    <button class="login-button">手工标注</button>
+
+    <div>
+        <form>
+            <div>
+                <a>孔洞：</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="box3"></div>
+</body>
+</html>
