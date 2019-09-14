@@ -20,7 +20,7 @@ public class FlaskServiceImpl implements FlaskService {
     @Override
     public Map<String, Object> call_flask() {
             RestTemplate restTemplate = new RestTemplate();
-            String str = restTemplate.getForObject("http://127.0.0.1:5000/", String.class);
+            String str = restTemplate.getForObject("http://127.0.0.1:5001/", String.class);
             System.out.println(str);
             Map<String, Object> map = new HashMap<>();
             map.put("msg",str );
@@ -37,7 +37,7 @@ public class FlaskServiceImpl implements FlaskService {
         httpHeaders.add("Content-Type", "application/json; charset=UTF-8");
         HttpEntity<Map<String, String>> requestEntity = new HttpEntity<Map<String, String>>(param, httpHeaders);
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> resp = restTemplate.exchange("http://127.0.0.1:5000/",
+        ResponseEntity<String> resp = restTemplate.exchange("http://127.0.0.1:5001/",
                                                             HttpMethod.POST,
                                                             requestEntity,
                                                             String.class);

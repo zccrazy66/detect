@@ -2,6 +2,7 @@ package cn.wmyskxz.springboot.Controller;
 
 
 import cn.wmyskxz.springboot.Service.FlaskService;
+import cn.wmyskxz.springboot.Service.UtilService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class DetectController {
     @Autowired
     FlaskService flaskService;
 
+    @Autowired
+    UtilService utilService;
+
     @RequestMapping("/detect_get")
     @ResponseBody
     public Object detect(){
@@ -40,10 +44,11 @@ public class DetectController {
 
         int reative = url.lastIndexOf("/") + 1;
         String url_post = UPLOADED_FLODER + url.substring(reative);
+        String base_code = utilService.change_pic_to_base64(url_post);
 //        System.out.println("post_url =" + url_post);
         Map<String, Object> map = new LinkedHashMap<>();
-        map.put("filepath", url_post);
-        map.put("threshold_L", threshold_L);
+        map.put("imageBase64", base_code);
+        map.put("pipeThickness", threshold_L);
         //String str = JSON.toJSONString(map);
         Map rlt = flaskService.post_flask(map);
 //        System.out.println("rlt from service is " + rlt);

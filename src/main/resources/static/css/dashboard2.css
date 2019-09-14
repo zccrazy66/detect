@@ -174,3 +174,8 @@ body {
 #chengcha,#impurity_sign,#hole_sign,#over_cold_welding_sign,#dislocation_sign{
     font-size: 30px;
 }
+
+#Semantic_segmentation{
+    font-size: 30px;
+    color: #ff0f35;
+}
